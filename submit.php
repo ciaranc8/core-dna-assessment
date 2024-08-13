@@ -3,7 +3,9 @@
 require_once 'http-client.php';
 
 // Step 1: Get the authentication token
+//Used for testing
 $client = new HttpClient('http://localhost:8000/mock-server.php');
+//$client = new HttpClient('https://corednacom.corewebdna.com/assessment-endpoint.php');
 $client->setMethod('OPTIONS');
 
 try {
@@ -20,7 +22,7 @@ $client->setHeaders(['Authorization' => $authToken]);
 $client->setPayload([
     'name' => 'Ciaran Callaghan',
     'email' => 'ciarancallaghan1995@gmail.com',
-    'url' => 'https://github.com/ciaranc8/core-dna-assessment/tree/main',
+    'url' => 'https://github.com/ciaranc8/core-dna-assessment',
 ]);
 
 try {

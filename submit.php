@@ -4,8 +4,8 @@ require_once 'http-client.php';
 
 // Step 1: Get the authentication token
 //Used for testing
-$client = new HttpClient('http://localhost:8000/mock-server.php');
-//$client = new HttpClient('https://corednacom.corewebdna.com/assessment-endpoint.php');
+//$client = new HttpClient('http://localhost:8000/mock-server.php');
+$client = new HttpClient('https://corednacom.corewebdna.com/assessment-endpoint.php');
 $client->setMethod('OPTIONS');
 
 try {

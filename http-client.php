@@ -105,7 +105,7 @@ class HttpClient
                 $headerArray[$key] = $value;
             }
         }
-
+        
         return [
             'status_code' => $statusCode,
             'headers' => $headerArray,
@@ -116,7 +116,6 @@ class HttpClient
     private function parseResponseBody($body)
     {
         $decodedBody = json_decode($body, true);
-        echo $body;
         if (json_last_error() !== JSON_ERROR_NONE) {
             throw new Exception('Failed to decode JSON response');
         }

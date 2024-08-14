@@ -10,7 +10,7 @@ $client->setMethod('OPTIONS');
 
 try {
     $response = $client->sendRequest();
-    $authToken = $response['headers']['Authorization'];
+    $authToken = $response['body'];
     echo "Authorization Token: $authToken\n";
 } catch (Exception $e) {
     die('Error: ' . $e->getMessage());
@@ -18,7 +18,7 @@ try {
 
 // Step 2: Submit the data
 $client->setMethod('POST');
-$client->setHeaders(['Authorization' => $authToken]);
+$client->setHeaders(['Authorization' => 'Bearer ' . $authToken]);
 $client->setPayload([
     'name' => 'Ciaran Callaghan',
     'email' => 'ciarancallaghan1995@gmail.com',
